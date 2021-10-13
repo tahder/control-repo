@@ -14,7 +14,9 @@ Vagrant.configure("2") do |config|
   # boxes at https://atlas.hashicorp.com/search.
   # If you have trouble running the 64-bit Vagrant VM, try this instead:
   # config.vm.box = "puppetlabs/ubuntu-16.04-32-puppet"
-  config.vm.box = "puppetlabs/ubuntu-16.04-64-puppet"
+  config.vm.box = "icalvete/ubuntu-18.04-64-puppet"
+  config.vm.provider "virtualbox"
+  config.vbguest.auto_update = false
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs

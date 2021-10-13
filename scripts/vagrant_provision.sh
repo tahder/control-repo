@@ -1,5 +1,5 @@
 #!/bin/bash
-apt-key adv --fetch-keys http://apt.puppetlabs.com/DEB-GPG-KEY-puppet
+apt-key adv --fetch-keys http://apt.puppetlabs.com/DEB-GPG-KEY-puppet-20250406
 apt-get update
 apt-get -y install puppet-agent
 /opt/puppetlabs/puppet/bin/gem install r10k --no-rdoc --no-ri

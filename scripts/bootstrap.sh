@@ -9,9 +9,11 @@ fi
 hostname ${HOSTNAME}
 echo ${HOSTNAME} >/etc/hostname
 source /etc/lsb-release
-apt-key adv --fetch-keys http://apt.puppetlabs.com/DEB-GPG-KEY-puppet
-wget http://apt.puppetlabs.com/puppetlabs-release-pc1-${DISTRIB_CODENAME}.deb
-dpkg -i puppetlabs-release-pc1-${DISTRIB_CODENAME}.deb
+sudo apt-key del 4096R/4BD6EC30
+sudo apt-key del 4096R/EF8D349F
+apt-key adv --fetch-keys http://apt.puppetlabs.com/DEB-GPG-KEY-puppet-20250406
+wget http://apt.puppetlabs.com/puppetlabs-release-${DISTRIB_CODENAME}.deb
+dpkg -i puppetlabs-release-${DISTRIB_CODENAME}.deb
 apt-get update
 apt-get -y install git puppet-agent
 cd /etc/puppetlabs/code/environments
